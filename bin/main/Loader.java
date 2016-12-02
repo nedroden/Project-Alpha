@@ -1,7 +1,7 @@
 /**
  * PROJECT ALPHA | Open source hotel management software
  *
- * Main.java
+ * Loader.java
  * @since December 2, 2016
  * @package main
  * 
@@ -14,13 +14,18 @@
 
 package main;
 
-public class Main {
+/**
+ * This class loads the required files to start the software.
+ */
+public class Loader {
 	
 	/**
 	 * This class is called automatically
 	 * @param args
 	 */
-	public static void main (String[] args) {
-		System.out.print("Hello.");
+	public static void main(String[] args) {
+		
+		ProjectAlpha projectAlpha = new ProjectAlpha();
+		projectAlpha.init();
 	}
 }
