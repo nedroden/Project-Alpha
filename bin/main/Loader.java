@@ -24,7 +24,6 @@ public class Loader {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
 		ProjectAlpha projectAlpha = new ProjectAlpha();
 		projectAlpha.init();
 	}
