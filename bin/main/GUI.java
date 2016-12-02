@@ -16,7 +16,6 @@ package main;
 
 import java.awt.*;
 import java.awt.Event.*;
-import java.util.ArrayList;
 import javax.swing.*;
 
 /**
