@@ -34,6 +34,6 @@ public class ProjectAlpha {
 	 * @return void
 	 */
 	public void init() {
-		gui.displayFrame();
+		gui.display();
 	}
 }

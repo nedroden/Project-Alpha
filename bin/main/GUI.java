@@ -15,7 +15,6 @@
 package main;
 
 import java.awt.*;
-import java.awt.Event.*;
 import javax.swing.*;
 
 /**
@@ -23,12 +22,12 @@ import javax.swing.*;
  */
 public class GUI {
 	
-	private JFrame _frame;
-	private JPanel _panel;
-	private JMenuBar _menu;
+	protected JFrame _frame;
+	protected JPanel _panel;
 	
 	// Settings
 	private Color _panelBackgroundColor = new Color(227, 236, 249);
+	private String _windowTitle = "Project Alpha | Hotel management software";
 	
 	/**
 	 * The constructor
@@ -42,10 +41,10 @@ public class GUI {
 	 * Display the window
 	 * @return false
 	 */
-	public void displayFrame() {
+	public void display() {
 		
 		// Create a new window and make sure it's visible
-		_frame = new JFrame("Project Alpha | Hotel management software");
+		_frame = new JFrame(_windowTitle);
 		_frame.setVisible(true);
 		_frame.setSize(1200, 800);
 		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,39 +53,11 @@ public class GUI {
 		_panel.setBackground(_panelBackgroundColor);
 		_panel.setVisible(true);
 		
-		displayNavbar();
-		
 		_frame.add(_panel);
-		_frame.setJMenuBar(_menu);
-	}
-	
-	/**
-	 * Display the menu bar
-	 * @todo Replace with sidebar menu
-	 * @return void
-	 */
-	private void displayNavbar() {
-
-		_menu = new JMenuBar();
 		
-		// Top level menu bar buttons should be added here
-		JMenu index = new JMenu("Index");
-		JMenu frontOffice = new JMenu("Front Office");
-		JMenu reservations = new JMenu("Reservations");
-		JMenu help = new JMenu("Help");
-		
-		// Drop-down menu items should be added here
-		JMenuItem exit = new JMenuItem("Exit");
-		JMenuItem about = new JMenuItem("About");
-
-		// Add the panel items to the menu
-		_menu.add(index);
-		_menu.add(frontOffice);
-		_menu.add(reservations);
-		_menu.add(help);
-		
-		// Add all sub-menu items to their respective parent items
-		index.add(exit);
-		help.add(about);
+		// Display the navigation bar
+		Menu _menu = new Menu();
+		_menu.display();
+		_frame.setJMenuBar(_menu._menuBar);
 	}
 }
