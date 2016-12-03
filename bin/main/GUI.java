@@ -45,7 +45,6 @@ public class GUI {
 		
 		// Create a new window and make sure it's visible
 		_frame = new JFrame(_windowTitle);
-		_frame.setVisible(true);
 		_frame.setSize(1200, 800);
 		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -56,8 +55,10 @@ public class GUI {
 		_frame.add(_panel);
 		
 		// Display the navigation bar
-		Menu _menu = new Menu();
-		_menu.display();
-		_frame.setJMenuBar(_menu._menuBar);
+		Menu menu = new Menu();
+		menu.display();
+		_frame.setJMenuBar(menu._menuBar);
+		
+		_frame.setVisible(true);
 	}
 }
