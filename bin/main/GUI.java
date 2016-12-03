@@ -52,7 +52,8 @@ public class GUI {
 		
 		_panel = new JPanel();
 		_panel.setBackground(_panelBackgroundColor);
-
+		_panel.setVisible(true);
+		
 		displayNavbar();
 		
 		_frame.add(_panel);
