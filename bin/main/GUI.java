@@ -22,7 +22,8 @@ import javax.swing.*;
  */
 public class GUI {
 	
-	protected JFrame _frame;
+	public JFrame frame;
+
 	protected JPanel _panel;
 	
 	// Settings
@@ -44,21 +45,21 @@ public class GUI {
 	public void display() {
 		
 		// Create a new window and make sure it's visible
-		_frame = new JFrame(_windowTitle);
-		_frame.setSize(1200, 800);
-		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame(_windowTitle);
+		frame.setSize(1200, 800);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		_panel = new JPanel();
 		_panel.setBackground(_panelBackgroundColor);
 		_panel.setVisible(true);
 		
-		_frame.add(_panel);
+		frame.add(_panel);
 		
 		// Display the navigation bar
 		Menu menu = new Menu();
 		menu.display();
-		_frame.setJMenuBar(menu._menuBar);
+		frame.setJMenuBar(menu._menuBar);
 		
-		_frame.setVisible(true);
+		frame.setVisible(true);
 	}
 }

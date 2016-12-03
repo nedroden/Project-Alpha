@@ -21,12 +21,14 @@ public class ProjectAlpha {
 	
 	private GUI gui = new GUI();
 	
+	public static String softwareVersion = "1.0.0";
+	
 	/**
-	 * The constructor. Currently, it doesn't do much.
+	 * The constructor.
 	 * @return void
 	 */
 	public ProjectAlpha() {
-		
+
 	}
 	
 	/**

@@ -53,7 +53,10 @@ public class Menu extends GUI implements ActionListener {
 
 		JMenuItem preferences = new JMenuItem("Preferences");
 		JMenuItem documentation = new JMenuItem("Documentation");
+		
 		JMenuItem about = new JMenuItem("About");
+		about.setActionCommand("about");
+		about.addActionListener(this);
 
 		// Add the panel items to the menu
 		_menuBar.add(index);
@@ -87,6 +90,10 @@ public class Menu extends GUI implements ActionListener {
 		switch (eventName) {
 			case "exit":
 				this.exitProgram();
+				break;
+			case "about":
+				help.SoftwareInfo about = new help.SoftwareInfo();
+				about.show();
 				break;
 		}
 	}
