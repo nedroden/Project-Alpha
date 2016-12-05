@@ -14,8 +14,6 @@
 
 package main;
 
-import java.sql.*;
-
 /**
  * This class initializes the application
  */
