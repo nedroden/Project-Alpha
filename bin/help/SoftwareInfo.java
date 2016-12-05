@@ -24,7 +24,7 @@ public class SoftwareInfo {
 	private String _softwareVersion;
 	
 	/**
-	 * The constructor
+	 * Add values to the variables we need
 	 * @return void
 	 */
 	public SoftwareInfo() {

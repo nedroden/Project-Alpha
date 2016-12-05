@@ -47,6 +47,7 @@ public class GUI {
 		_frame = new JFrame(_windowTitle);
 		_frame.setSize(1200, 800);
 		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		_frame.setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
 		
 		_panel = new JPanel();
 		_panel.setBackground(_panelBackgroundColor);
