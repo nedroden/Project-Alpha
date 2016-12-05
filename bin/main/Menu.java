@@ -40,7 +40,7 @@ public class Menu extends GUI implements ActionListener {
 		
 		// Top level menu bar buttons should be added here
 		JMenu index = new JMenu("Index");
-		JMenu frontOffice = new JMenu("Front Office");
+		JMenu frontOffice = new JMenu("Front office");
 		JMenu reservations = new JMenu("Reservations");
 		JMenu hotel = new JMenu("Manage hotel");
 		JMenu help = new JMenu("Help");
@@ -49,6 +49,15 @@ public class Menu extends GUI implements ActionListener {
 		JMenuItem exit = new JMenuItem("Exit");
 		exit.setActionCommand("exit");
 		exit.addActionListener(this);
+		
+		JMenuItem checkIn = new JMenuItem("Check-in");
+		JMenuItem checkOut = new JMenuItem("Check-out");
+		JMenuItem occupiedRooms = new JMenuItem("Occupied rooms");
+		JMenuItem viewRoom = new JMenuItem("View room");
+		
+		JMenuItem viewReservations = new JMenuItem("View reservations");
+		JMenuItem makeReservation = new JMenuItem("Create reservation");
+		JMenuItem modifyReservation = new JMenuItem("Modify reservation");
 
 		JMenuItem preferences = new JMenuItem("Preferences");
 		JMenuItem documentation = new JMenuItem("Documentation");
@@ -67,6 +76,13 @@ public class Menu extends GUI implements ActionListener {
 		// Add all sub-menu items to their respective parent items
 		index.add(preferences);
 		index.add(exit);
+		frontOffice.add(checkIn);
+		frontOffice.add(checkOut);
+		frontOffice.add(occupiedRooms);
+		frontOffice.add(viewRoom);
+		reservations.add(viewReservations);
+		reservations.add(makeReservation);
+		reservations.add(modifyReservation);
 		help.add(documentation);
 		help.add(about);
 	}
