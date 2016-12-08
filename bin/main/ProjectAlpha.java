@@ -36,6 +36,11 @@ public class ProjectAlpha {
 	 * @return void
 	 */
 	public void init() {
+		
+		// Get the settings
+		Configuration config = new Configuration();
+		config.load();
+		
 		gui.display();
 	}
 }
