@@ -18,6 +18,8 @@ import java.sql.*;
 
 public class Database {
 	
+	public static Connection connection;
+	
 	/**
 	 * The constructor.
 	 * @return void
@@ -31,14 +33,40 @@ public class Database {
 	 * @return void
 	 */
 	public void connect() {
-		
+		try {
+			connection = DriverManager.getConnection(
+					"jdbc:mysql://" + Configuration.config.getProperty("db_server")
+						+ ":" + Configuration.config.getProperty("db_port")
+						+ "/" + Configuration.config.getProperty("db_name"),
+					Configuration.config.getProperty("db_username"), 
+					Configuration.config.getProperty("db_password"));
+		}
+		catch (SQLException e) {
+			System.out.println("Could not establish a connection with the database. Detailed error message:");
+			e.printStackTrace();
+			System.exit(0);
+		}
 	}
 	
 	/**
 	 * Run a query
 	 * @return void
 	 */
-	public void execute() {
+	public static void execute() {
 		
+	}
+	
+	/**
+	 * Disconnect from the database
+	 * @return void
+	 */
+	public void disconnect() {
+		try {
+			connection.close();
+		}
+		catch (SQLException e) {
+			System.out.println("Could not disconnect from the database.");
+			System.exit(0);
+		}
 	}
 }
