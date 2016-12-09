@@ -24,10 +24,8 @@ public class GUI {
 	
 	protected JFrame _frame;
 	protected JPanel _panel;
-	
-	// Settings
+
 	private Color _panelBackgroundColor = new Color(227, 236, 249);
-	private String _windowTitle = "Project Alpha | Hotel management software";
 	
 	/**
 	 * The constructor
@@ -44,8 +42,7 @@ public class GUI {
 	public void display() {
 		
 		// Create a new window and make sure it's visible
-		_frame = new JFrame(_windowTitle);
-		_frame.setSize(1200, 800);
+		_frame = new JFrame(Configuration.config.getProperty("window_title"));
 		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		_frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
