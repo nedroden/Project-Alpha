@@ -23,9 +23,10 @@ import javax.swing.*;
 public class GUI {
 	
 	protected JFrame _frame;
-	protected JPanel _panel;
+	protected JPanel _panelMain;
+	protected CardLayout mainCl;
 
-	private Color _panelBackgroundColor = new Color(227, 236, 249);
+	protected Color _panelBackgroundColor = new Color(227, 236, 249);
 	
 	/**
 	 * The constructor
@@ -41,16 +42,23 @@ public class GUI {
 	 */
 	public void display() {
 		
+		mainCl = new CardLayout();
+		
 		// Create a new window and make sure it's visible
 		_frame = new JFrame(Configuration.config.getProperty("window_title"));
 		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		_frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		_panel = new JPanel();
-		_panel.setBackground(_panelBackgroundColor);
-		_panel.setVisible(true);
+		_panelMain = new JPanel();
+		Section section = new Section();
+		section.display();
 		
-		_frame.add(_panel);
+		// Layouts
+		JPanel _layoutHomePage = new JPanel();
+		_layoutHomePage.setVisible(true);
+		
+		// The default section
+		_frame.add(_panelMain);
 		
 		// Display the navigation bar
 		Menu menu = new Menu();
