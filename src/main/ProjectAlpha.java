@@ -19,7 +19,7 @@ package main;
  */
 public class ProjectAlpha {
 	
-	private GUI gui = new GUI();
+	private GUI gui;
 	
 	public static String softwareVersion = "1.0.0";
 	
@@ -42,7 +42,8 @@ public class ProjectAlpha {
 		config.load();
 		Database db = new Database();
 		db.connect();
-		
+
+		gui = new GUI();
 		gui.display();
 	}
 }

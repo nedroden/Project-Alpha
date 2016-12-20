@@ -28,10 +28,12 @@ public class Home extends GUI {
 	 * @return void
 	 */
 	public Home() {
-		super();
-		_panelMain.setLayout(mainCl);
-		_panelMain.setBackground(_panelBackgroundColor);
-		_panelMain.setVisible(true);		
+		JPanel _layoutHomePage = new JPanel();
+		super._panelMain.setLayout(mainCl);
+		super._panelMain.setBackground(_panelBackgroundColor);
+		super._panelMain.setVisible(true);
+		_layoutHomePage.setVisible(true);
+		super._frame.add(_layoutHomePage);
 	}
 	
 	/**
