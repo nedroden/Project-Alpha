@@ -21,19 +21,16 @@ import javax.swing.*;
  */
 public class Home extends GUI {
 	
-	JLabel labelOne = new JLabel("Test");
+	private JLabel _labelOne = new JLabel("Test");
+
+	protected JPanel _layoutHomePage;
 	
 	/**
 	 * The constructor
 	 * @return void
 	 */
 	public Home() {
-		JPanel _layoutHomePage = new JPanel();
-		super._panelMain.setLayout(mainCl);
-		super._panelMain.setBackground(_panelBackgroundColor);
-		super._panelMain.setVisible(true);
-		_layoutHomePage.setVisible(true);
-		super._frame.add(_layoutHomePage);
+		_layoutHomePage = new JPanel();
 	}
 	
 	/**
@@ -41,6 +38,8 @@ public class Home extends GUI {
 	 * @return void
 	 */
 	public void display() {
-		super._panelMain.add(labelOne);
+		_layoutHomePage.setBackground(super._panelBackgroundColor);
+		_layoutHomePage.setVisible(true);
+		super._panelMain.add(_layoutHomePage);
 	}
 }

@@ -25,7 +25,6 @@ public class GUI {
 	protected JFrame _frame;
 	protected JPanel _panelMain;
 	protected CardLayout mainCl;
-	protected JPanel _layoutHomePage;
 
 	protected Color _panelBackgroundColor;
 	
@@ -46,10 +45,10 @@ public class GUI {
 	public void display() {
 		
 		mainCl = new CardLayout();
-		
-		// Create a new window
-		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		_frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+		_panelMain.setLayout(mainCl);
+
+		mainCl.show(_panelMain, "1");
 
 		Home home = new Home();
 		home.display();
@@ -58,7 +57,11 @@ public class GUI {
 		Menu menu = new Menu();
 		menu.display();
 		_frame.setJMenuBar(menu._menuBar);
-		
+
+		// Create a new window
+		_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		_frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		_frame.pack();
 		_frame.setVisible(true);
 	}
 }
