@@ -20,26 +20,22 @@ import javax.swing.*;
  * This class displays the index page
  */
 public class Home extends GUI {
-	
-	private JLabel _labelOne = new JLabel("Test");
 
-	protected JPanel _layoutHomePage;
-	
-	/**
-	 * The constructor
-	 * @return void
-	 */
-	public Home() {
-		_layoutHomePage = new JPanel();
-	}
-	
-	/**
-	 * This method displays the index page itself
-	 * @return void
-	 */
-	public void display() {
-		_layoutHomePage.setBackground(super._panelBackgroundColor);
-		_layoutHomePage.setVisible(true);
-		super._panelMain.add(_layoutHomePage);
-	}
+    private static JPanel _panel = new JPanel();
+
+    /**
+     * The constructor
+     */
+    public Home() {
+
+    }
+
+    /**
+     * Display this section
+     * @return void
+     */
+    public static JPanel displaySection() {
+        _panel.setBackground(GUI._panelBackgroundColor);
+        return _panel;
+    }
 }

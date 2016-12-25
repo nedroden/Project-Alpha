@@ -40,8 +40,6 @@ public class Configuration {
 	 * @return void
 	 */
 	public void load() {
-		
-		// Attempt to load the file. If it doesn't work, display an error message and shut down the program
 		try {
 			config.load(new FileInputStream("config.properties"));
 		}

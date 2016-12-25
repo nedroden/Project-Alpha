@@ -20,32 +20,33 @@ import javax.swing.*;
 /**
  * This class contains methods used for displaying the navigation bar.
  */
-public class Menu extends GUI implements ActionListener {
+public class Menu implements ActionListener {
 	
-	protected JMenuBar _menuBar;
+	private JMenuBar _menuBar;
+	private GUI _gui;
 	
 	/**
 	 * Set some important variables
 	 * @return void
 	 */
-	public Menu() {
+	public Menu(GUI gui) {
 		_menuBar = new JMenuBar();
+		this._gui = gui;
 	}
 	
 	/**
 	 * Display the menu bar
 	 * @return void
 	 */
-	public void display() {
-		
-		// Top level menu bar buttons should be added here
+	public JMenuBar display() {
+		// !!! Top level menu bar buttons should be added here !!!
 		JMenu index = new JMenu("Index");
 		JMenu frontOffice = new JMenu("Front office");
 		JMenu reservations = new JMenu("Reservations");
 		JMenu hotel = new JMenu("Manage hotel");
 		JMenu help = new JMenu("Help");
 		
-		// Drop-down menu items should be added here
+		// !!! Drop-down menu items should be added here !!!
 		JMenuItem exit = new JMenuItem("Exit");
 		exit.setActionCommand("exit");
 		exit.addActionListener(this);
@@ -66,14 +67,12 @@ public class Menu extends GUI implements ActionListener {
 		about.setActionCommand("about");
 		about.addActionListener(this);
 
-		// Add the panel items to the menu
 		_menuBar.add(index);
 		_menuBar.add(frontOffice);
 		_menuBar.add(reservations);
 		_menuBar.add(hotel);
 		_menuBar.add(help);
-		
-		// Add all sub-menu items to their respective parent items
+
 		index.add(preferences);
 		index.add(exit);
 		frontOffice.add(checkIn);
@@ -85,6 +84,8 @@ public class Menu extends GUI implements ActionListener {
 		reservations.add(modifyReservation);
 		help.add(documentation);
 		help.add(about);
+
+		return _menuBar;
 	}
 	
 	/**

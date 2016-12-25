@@ -36,8 +36,6 @@ public class ProjectAlpha {
 	 * @return void
 	 */
 	public void init() {
-		
-		// Get the settings and load the database
 		Configuration config = new Configuration();
 		config.load();
 		Database db = new Database();
