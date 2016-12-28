@@ -26,7 +26,7 @@ public class Database {
 
 	public void connect() {
 		try {
-			connection = DriverManager.getConnection(
+			Database.connection = DriverManager.getConnection(
 				"jdbc:mysql://" + Configuration.config.getProperty("db_server")
 					+ ":" + Configuration.config.getProperty("db_port")
 					+ "/" + Configuration.config.getProperty("db_name")
@@ -39,10 +39,6 @@ public class Database {
 			e.printStackTrace();
 			System.exit(0);
 		}
-	}
-
-	public static void execute() {
-		
 	}
 
 	public void disconnect() {

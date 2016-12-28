@@ -15,8 +15,6 @@
 package main;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -49,6 +47,7 @@ public class GUI extends Application {
         mainScene = new Scene(mainLayout, 400, 250);
 
         mainWindow.setScene(mainScene);
+        mainWindow.setMaximized(true);
         mainWindow.setTitle(Configuration.config.getProperty("window_title"));
         mainWindow.show();
     }
