@@ -27,7 +27,6 @@ public class GUI extends Application {
     private Stage mainWindow;
     private Scene mainScene;
     private GridPane mainLayout;
-    private Stage loginWindow;
 
     public GUI() {
 

@@ -42,25 +42,27 @@ public class Login {
 
         // Labels should go below this line
         Label labelUsername = new Label("Username:");
-        GridPane.setConstraints(labelUsername, 3, 3);
+        GridPane.setConstraints(labelUsername, 3, 8);
 
         Label labelPassword = new Label("Password:");
-        GridPane.setConstraints(labelPassword, 3, 4);
+        GridPane.setConstraints(labelPassword, 3, 9);
 
         // Input fields should go below this line
         TextField fieldUsername = new TextField();
-        GridPane.setConstraints(fieldUsername, 4, 3);
+        GridPane.setConstraints(fieldUsername, 4, 8);
         fieldUsername.setPromptText("Username");
 
         PasswordField fieldPassword = new PasswordField();
-        GridPane.setConstraints(fieldPassword, 4, 4);
+        GridPane.setConstraints(fieldPassword, 4, 9);
 
         Button submitButton = new Button("Log in");
-        GridPane.setConstraints(submitButton, 4, 5);
+        GridPane.setConstraints(submitButton, 4, 10);
 
         _layout.getChildren().addAll(labelUsername, labelPassword, fieldUsername, fieldPassword, submitButton);
 
-        _scene = new Scene(_layout, 300, 150);
+        _scene = new Scene(_layout, 300, 200);
+        _scene.getStylesheets().add("resources/CSS/login.css");
+
         _stage.setScene(_scene);
         _stage.setTitle("Employee login");
         return _stage;
