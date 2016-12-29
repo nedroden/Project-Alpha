@@ -20,6 +20,9 @@ public class ProjectAlpha {
 
     public static User user;
 
+    private static String _version = "1.0 Alpha 1";
+    private static String _copyright = "Project Alpha development team, 2016";
+
     public ProjectAlpha() {
 
     }
@@ -33,5 +36,13 @@ public class ProjectAlpha {
 
     public static void setUser(User user) {
         ProjectAlpha.user = user;
+    }
+
+    public static String getVersion() {
+        return _version;
+    }
+
+    public static String getCopyright() {
+        return _copyright;
     }
 }

@@ -1,0 +1,61 @@
+/**
+ * PROJECT ALPHA
+ * Open source hotel management software
+ *
+ * @version     1.0 Alpha 1
+ * @author      Rick Nieborg, Mark Nieborg, Robert Monden
+ * @copyright   Project Alpha, 2016
+ * @license     MIT
+ */
+#sidebar {
+    -fx-background-color: #e7e7e7;
+}
+
+#sidebar .button {
+    -fx-pref-height: 64px;
+    -fx-pref-width: 64px;
+    -fx-background-size: 70%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px;
+}
+
+#sidebar .button:hover {
+    -fx-background-color: #cdcdcd;
+}
+
+#button_home {
+    -fx-background-image: url('../images/side_home.png');
+    -fx-background-color: #4699d4;
+}
+
+#button_checkin {
+    -fx-background-image: url('../images/side_checkin.png');
+    -fx-background-color: #4dd446;
+}
+
+#button_checkout {
+    -fx-background-image: url('../images/side_checkout.png');
+    -fx-background-color: #d4a046;
+}
+
+#button_newreservation {
+    -fx-background-image: url('../images/side_new_reservation.png');
+    -fx-background-color: #8946d4;
+}
+
+#button_reservations {
+    -fx-background-image: url('../images/side_reservations.png');
+    -fx-background-color: #46d4b1;
+}
+
+#button_preferences {
+    -fx-background-image: url('../images/side_preferences.png');
+    -fx-background-color: #d4b446;
+}
+
+#button_quit {
+    -fx-background-image: url('../images/side_quit.png');
+    -fx-background-color: #d44646;
+}

@@ -12,9 +12,9 @@
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */
-
 package main;
 
+import help.About;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -40,8 +40,8 @@ public class NavBar {
 		// [FRONT OFFICE]
 		Menu frontoffice = new Menu("Front _office");
 
-		MenuItem frontoffice_checkin = new MenuItem("Check-in");
-		MenuItem frontoffice_checkout = new MenuItem("Check-out");
+		MenuItem frontoffice_checkin = new MenuItem("Checkin");
+		MenuItem frontoffice_checkout = new MenuItem("Checkout");
 		MenuItem frontoffice_occupied_rooms = new MenuItem("Occupied rooms");
 		MenuItem frontoffice_view_room = new MenuItem("View room...");
 
@@ -65,8 +65,9 @@ public class NavBar {
 		MenuItem help_about = new MenuItem("About");
 		MenuItem help_docs = new MenuItem("Documentation");
 
-		help.getItems().addAll(help_about, help_docs);
+		help_about.setOnAction(e -> About.displayScreen());
 
+		help.getItems().addAll(help_about, help_docs);
 
 		MenuBar menuBar = new MenuBar();
 		menuBar.getMenus().addAll(file, frontoffice, reservations, manage, help);

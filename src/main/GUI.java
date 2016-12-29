@@ -18,6 +18,7 @@ import javafx.application.Application;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import user.Login;
 
@@ -49,6 +50,10 @@ public class GUI extends Application {
         NavBar navBar = new NavBar();
         MenuBar menuBar = navBar.getMenu();
         mainLayout.setTop(menuBar);
+
+        Sidebar sidebar = new Sidebar();
+        VBox sidebarBox = sidebar.getSidebar();
+        mainLayout.setLeft(sidebarBox);
 
         mainScene = new Scene(mainLayout, 400, 250);
 

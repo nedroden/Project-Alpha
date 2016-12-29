@@ -43,7 +43,6 @@ public class Login extends GUI {
 
     public Stage getStage(Stage stage) {
         _stage = stage;
-        _stage.setResizable(false);
 
         _layout = new GridPane();
         _layout.setVgap(10);
@@ -77,9 +76,9 @@ public class Login extends GUI {
 
         _layout.getChildren().addAll(labelUsername, labelPassword, fieldUsername, fieldPassword, submitButton);
 
+        _stage.setResizable(false);
         _scene = new Scene(_layout, 300, 200);
         _scene.getStylesheets().add("resources/CSS/login.css");
-
         _stage.setScene(_scene);
         _stage.setTitle("Employee login");
         return _stage;
