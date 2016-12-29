@@ -15,7 +15,8 @@
 package main;
 
 import javafx.application.Application;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.MenuBar;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import user.Login;
@@ -24,7 +25,7 @@ public class GUI extends Application {
 
     private Stage mainWindow;
     private Scene mainScene;
-    private GridPane mainLayout;
+    private BorderPane mainLayout;
 
     public GUI() {
 
@@ -43,7 +44,12 @@ public class GUI extends Application {
 
     public void showMainWindow() {
         mainWindow = new Stage();
-        mainLayout = new GridPane();
+        mainLayout = new BorderPane();
+
+        NavBar navBar = new NavBar();
+        MenuBar menuBar = navBar.getMenu();
+        mainLayout.setTop(menuBar);
+
         mainScene = new Scene(mainLayout, 400, 250);
 
         mainWindow.setScene(mainScene);
