@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import java.sql.ResultSet;
@@ -27,6 +28,7 @@ import java.sql.Statement;
 
 import main.Database;
 import main.GUI;
+import main.ProjectAlpha;
 import main.Tool;
 
 public class Login extends GUI {
@@ -64,7 +66,14 @@ public class Login extends GUI {
 
         Button submitButton = new Button("Log in");
         GridPane.setConstraints(submitButton, 4, 10);
-        submitButton.setOnAction(e -> checkAndDoLogin(fieldUsername.getText(), fieldPassword.getText()));
+
+        submitButton.setOnAction(e -> login(fieldUsername.getText(), fieldPassword.getText()));
+        fieldUsername.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) login(fieldUsername.getText(), fieldPassword.getText());
+        });
+        fieldPassword.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) login(fieldUsername.getText(), fieldPassword.getText());
+        });
 
         _layout.getChildren().addAll(labelUsername, labelPassword, fieldUsername, fieldPassword, submitButton);
 
@@ -76,26 +85,51 @@ public class Login extends GUI {
         return _stage;
     }
 
-    private void checkAndDoLogin(String username, String password) {
+    private void login(String username, String password) {
+        try {
+            loginAndUpdateScreen(username, password);
+        }
+        catch (SQLException error) {
+            error.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    private void loginAndUpdateScreen(String username, String password) throws SQLException {
         boolean found = false;
 
-        String query = "SELECT username, password FROM pa_users";
+        String query = "SELECT username, password, rank FROM pa_users";
+        Statement statement = null;
+
+        if (username.trim().isEmpty() || password.trim().isEmpty() || password == null || username == null) {
+            System.out.println("Please enter both a username and a password.");
+            return;
+        }
+
         try {
-            Statement statement = Database.connection.createStatement();
+            statement = Database.connection.createStatement();
             ResultSet result = statement.executeQuery(query);
             while (result.next() && found == false) {
                 if (result.getString("username").equals(username) && result.getString("password").equals(Tool.hash(password))) {
                     super.showMainWindow();
-                    statement.close();
-                    _stage.close();
-                    return;
+                    ProjectAlpha.setUser(new User(
+                        username,
+                        result.getInt("rank")
+                    ));
+                    found = true;
+                    break;
                 }
             }
-            System.out.println("Login failed. Make sure both the username and password are correct.");
+
+            if (!found)
+                System.out.println("Login failed. Make sure both the username and password are correct.");
         }
         catch (SQLException e) {
-            System.out.println("Login failed due to a SQL error.");
             e.printStackTrace();
+        }
+        finally {
+            if (statement != null) statement.close();
+            if (found) _stage.close();
         }
     }
 }

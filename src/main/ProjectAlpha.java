@@ -14,7 +14,11 @@
  */
 package main;
 
+import user.User;
+
 public class ProjectAlpha {
+
+    public static User user;
 
     public ProjectAlpha() {
 
@@ -25,5 +29,9 @@ public class ProjectAlpha {
         config.load();
         Database db = new Database();
         db.connect();
+    }
+
+    public static void setUser(User user) {
+        ProjectAlpha.user = user;
     }
 }
