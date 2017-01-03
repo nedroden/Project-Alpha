@@ -4,7 +4,7 @@
  *
  * @version     1.0 Alpha 1
  * @author      Rick Nieborg, Mark Nieborg, Robert Monden
- * @copyright   Project Alpha, 2016
+ * @copyright   Project Alpha, 2016-2017
  * @license     MIT
  *
  * Class information:
@@ -19,6 +19,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+
 import main.ProjectAlpha;
 
 public class About {

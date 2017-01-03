@@ -4,7 +4,7 @@
  *
  * @version     1.0 Alpha 1
  * @author      Rick Nieborg, Mark Nieborg, Robert Monden
- * @copyright   Project Alpha, 2016
+ * @copyright   Project Alpha, 2016-2017
  * @license     MIT
  *
  * Class information:
@@ -65,5 +65,9 @@ public class GUI extends Application {
 
     public void setScene(Scene scene) {
         mainWindow.setScene(scene);
+    }
+
+    public BorderPane getLayout() {
+        return this.mainLayout;
     }
 }
