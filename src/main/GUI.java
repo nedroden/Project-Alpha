@@ -20,6 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import user.Login;
 
 public class GUI extends Application {
@@ -28,8 +29,17 @@ public class GUI extends Application {
     private Scene mainScene;
     private BorderPane mainLayout;
 
-    public GUI() {
+    private NavBar _navBar;
+    private MenuBar _menuBar;
+    private Sidebar _sidebar;
+    private VBox _sidebarBox;
 
+    public GUI() {
+        _navBar = new NavBar();
+        _menuBar = _navBar.getMenu();
+
+        _sidebar = new Sidebar();
+        _sidebarBox = _sidebar.getSidebar();
     }
 
     public static void GUI(String[] args) {
@@ -47,13 +57,12 @@ public class GUI extends Application {
         mainWindow = new Stage();
         mainLayout = new BorderPane();
 
-        NavBar navBar = new NavBar();
-        MenuBar menuBar = navBar.getMenu();
-        mainLayout.setTop(menuBar);
+        mainLayout.setTop(_menuBar);
+        mainLayout.setLeft(_sidebarBox);
 
-        Sidebar sidebar = new Sidebar();
-        VBox sidebarBox = sidebar.getSidebar();
-        mainLayout.setLeft(sidebarBox);
+        WelcomePage welcome = new WelcomePage();
+        BorderPane welcomePage = welcome.getContent();
+        mainLayout.setCenter(welcomePage);
 
         mainScene = new Scene(mainLayout, 400, 250);
 
@@ -63,11 +72,11 @@ public class GUI extends Application {
         mainWindow.show();
     }
 
-    public void setScene(Scene scene) {
-        mainWindow.setScene(scene);
-    }
-
     public BorderPane getLayout() {
         return this.mainLayout;
+    }
+
+    public void setScene(Scene scene) {
+        mainWindow.setScene(scene);
     }
 }
