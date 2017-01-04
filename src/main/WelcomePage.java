@@ -25,6 +25,7 @@ public class WelcomePage {
 
     public static BorderPane getContent() {
         BorderPane pane = new BorderPane();
+
         Label label = new Label("Test");
         pane.setCenter(label);
 

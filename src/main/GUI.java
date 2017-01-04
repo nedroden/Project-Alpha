@@ -71,6 +71,7 @@ public class GUI extends Application {
 
         mainScene = new Scene(mainLayout, 400, 250);
 
+        mainScene.getStylesheets().add("resources/CSS/main.css");
         mainWindow.setScene(mainScene);
         mainWindow.setMaximized(true);
         mainWindow.setTitle(Configuration.config.getProperty("window_title"));
