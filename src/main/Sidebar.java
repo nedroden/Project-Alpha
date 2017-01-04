@@ -15,16 +15,15 @@
 package main;
 
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class Sidebar {
 
-    public Sidebar() {
+    private GUI gui;
 
+    public Sidebar(GUI gui) {
+        this.gui = gui;
     }
 
     public VBox getSidebar() {
@@ -33,6 +32,7 @@ public class Sidebar {
 
         Button button_home = new Button();
         button_home.setId("button_home");
+        button_home.setOnAction(e -> gui.setCenter("WelcomePage", WelcomePage.getContent()));
 
         Button button_checkin = new Button();
         button_checkin.setId("button_checkin");

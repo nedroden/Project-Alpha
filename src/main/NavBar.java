@@ -21,8 +21,10 @@ import javafx.scene.control.MenuItem;
 
 public class NavBar {
 
-	public NavBar() {
+	private GUI gui;
 
+	public NavBar(GUI gui) {
+		this.gui = gui;
 	}
 
 	public MenuBar getMenu() {

@@ -20,6 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.util.HashMap;
 
 import user.Login;
 
@@ -34,12 +35,16 @@ public class GUI extends Application {
     private Sidebar _sidebar;
     private VBox _sidebarBox;
 
+    private HashMap<String, BorderPane> _section;
+
     public GUI() {
-        _navBar = new NavBar();
+        _navBar = new NavBar(this);
         _menuBar = _navBar.getMenu();
 
-        _sidebar = new Sidebar();
+        _sidebar = new Sidebar(this);
         _sidebarBox = _sidebar.getSidebar();
+
+        _section = new HashMap<>();
     }
 
     public static void GUI(String[] args) {
@@ -76,7 +81,14 @@ public class GUI extends Application {
         return this.mainLayout;
     }
 
-    public void setScene(Scene scene) {
-        mainWindow.setScene(scene);
+    public void setCenter(String className, BorderPane pane) {
+        if (_section.containsKey(className)) {
+            BorderPane tempObject = _section.get(className);
+            mainLayout.setCenter(tempObject);
+        }
+        else {
+            _section.put(className, pane);
+            mainLayout.setCenter(pane);
+        }
     }
 }

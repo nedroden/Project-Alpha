@@ -14,6 +14,7 @@
  */
 package main;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class WelcomePage {
@@ -22,7 +23,11 @@ public class WelcomePage {
 
     }
 
-    public BorderPane getContent() {
-        return null;
+    public static BorderPane getContent() {
+        BorderPane pane = new BorderPane();
+        Label label = new Label("Test");
+        pane.setCenter(label);
+
+        return pane;
     }
 }
