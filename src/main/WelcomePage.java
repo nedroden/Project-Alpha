@@ -14,7 +14,8 @@
  */
 package main;
 
-import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
 public class WelcomePage {
@@ -26,8 +27,10 @@ public class WelcomePage {
     public static BorderPane getContent() {
         BorderPane pane = new BorderPane();
 
-        Label label = new Label("Test");
-        pane.setCenter(label);
+        Image logo = new Image("resources/images/logo.png");
+        ImageView logoView = new ImageView(logo);
+
+        pane.setCenter(logoView);
 
         return pane;
     }
