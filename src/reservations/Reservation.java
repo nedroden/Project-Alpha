@@ -21,8 +21,11 @@ public class Reservation {
     private String _dateIn;
     private String _dateOut;
 
-    public Reservation() {
-
+    public Reservation(int ID, Client client, String dateIn, String dateOut) {
+        _ID = ID;
+        _client = client;
+        _dateIn = dateIn;
+        _dateOut = dateOut;
     }
 
     public int getID() {

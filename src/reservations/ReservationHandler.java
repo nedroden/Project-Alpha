@@ -17,6 +17,8 @@ package reservations;
 import java.sql.*;
 import java.util.ArrayList;
 
+import main.Database;
+
 public class ReservationHandler {
 
     private ArrayList<Reservation> _reservations;
@@ -25,9 +27,23 @@ public class ReservationHandler {
 
     }
 
-    public Reservation getReservations(String dateIn, String dateOut) {
-        // Execute query here
+    public ArrayList getReservations(String dateIn) throws SQLException {
+        // !!! NOTE: DATES SHOULD BE CONVERTED TO SQL FORMAT
+        String query = "SELECT ID, client, date_in, date_out, room, comments, status FROM pa_reservations WHERE date_in = '" + dateIn + "'";
+        Statement statement = null;
 
+        try {
+            statement = Database.connection.createStatement();
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()) {
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            if (statement != null) statement.close();
+        }
         return null;
     }
 }

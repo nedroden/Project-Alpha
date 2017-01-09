@@ -20,15 +20,15 @@ public class User {
     private int _rank;
 
     public User(String username, int rank) {
-        this._username = username;
-        this._rank = rank;
+        _username = username;
+        _rank = rank;
     }
 
     public String getUsername() {
-        return this._username;
+        return _username;
     }
 
     public int getRank() {
-        return this._rank;
+        return _rank;
     }
 }
