@@ -14,6 +14,7 @@
  */
 package main;
 
+import frontoffice.CheckInPage;
 import help.About;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -48,6 +49,8 @@ public class NavBar {
 		MenuItem frontoffice_checkout = new MenuItem("Check-out");
 		MenuItem frontoffice_occupied_rooms = new MenuItem("Occupied rooms");
 		MenuItem frontoffice_view_room = new MenuItem("View room...");
+
+		frontoffice_checkin.setOnAction(e -> gui.setCenter("CheckInPage", CheckInPage.getContent()));
 
 		frontoffice.getItems().addAll(frontoffice_checkin, frontoffice_checkout, frontoffice_occupied_rooms, frontoffice_view_room);
 

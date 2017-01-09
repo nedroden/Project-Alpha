@@ -18,6 +18,8 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
+import frontoffice.CheckInPage;
+
 public class Sidebar {
 
     private GUI gui;
@@ -36,6 +38,7 @@ public class Sidebar {
 
         Button button_checkin = new Button();
         button_checkin.setId("button_checkin");
+        button_checkin.setOnAction(e -> gui.setCenter("CheckInPage", CheckInPage.getContent()));
 
         Button button_checkout = new Button();
         button_checkout.setId("button_checkout");

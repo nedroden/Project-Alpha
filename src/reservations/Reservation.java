@@ -29,6 +29,10 @@ public class Reservation {
         return _ID;
     }
 
+    public Client getClient() {
+        return _client;
+    }
+
     public String getDateIn() {
         return _dateIn;
     }

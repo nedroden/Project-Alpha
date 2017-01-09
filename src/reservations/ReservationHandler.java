@@ -25,6 +25,6 @@ public class ReservationHandler {
     }
 
     public void getReservations(String dateIn, String dateOut) {
-
+        // Execute query here
     }
 }
