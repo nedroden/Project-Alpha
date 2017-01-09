@@ -35,7 +35,8 @@ public class GUI extends Application {
     private Sidebar _sidebar;
     private VBox _sidebarBox;
 
-    private HashMap<String, BorderPane> _section;
+    private HashMap<String, BorderPane> _sectionsBP;
+    private HashMap<String, VBox> _sectionsVB;
 
     public GUI() {
         _navBar = new NavBar(this);
@@ -44,7 +45,8 @@ public class GUI extends Application {
         _sidebar = new Sidebar(this);
         _sidebarBox = _sidebar.getSidebar();
 
-        _section = new HashMap<>();
+        _sectionsBP = new HashMap<>();
+        _sectionsVB = new HashMap<>();
     }
 
     public static void GUI(String[] args) {
@@ -83,12 +85,23 @@ public class GUI extends Application {
     }
 
     public void setCenter(String className, BorderPane pane) {
-        if (_section.containsKey(className)) {
-            BorderPane tempObject = _section.get(className);
+        if (_sectionsBP.containsKey(className)) {
+            BorderPane tempObject = _sectionsBP.get(className);
             mainLayout.setCenter(tempObject);
         }
         else {
-            _section.put(className, pane);
+            _sectionsBP.put(className, pane);
+            mainLayout.setCenter(pane);
+        }
+    }
+
+    public void setCenter(String className, VBox pane) {
+        if (_sectionsVB.containsKey(className)) {
+            VBox tempObject = _sectionsVB.get(className);
+            mainLayout.setCenter(tempObject);
+        }
+        else {
+            _sectionsVB.put(className, pane);
             mainLayout.setCenter(pane);
         }
     }
