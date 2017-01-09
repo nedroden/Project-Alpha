@@ -19,7 +19,15 @@ public class Client {
     private int _ID;
     private String _firstName;
     private String _lastName;
+
     private String _email;
+    private int _phone;
+    private int _mobile;
+
+    private String _address;
+    private String _ZIP;
+    private String _state;
+    private String _country;
 
     public Client() {
 
@@ -39,5 +47,29 @@ public class Client {
 
     public String getEmail() {
         return _email;
+    }
+
+    public int getPhone() {
+        return _phone;
+    }
+
+    public int getMobile() {
+        return _mobile;
+    }
+
+    public String getAddress() {
+        return _address;
+    }
+
+    public String getZIP() {
+        return _ZIP;
+    }
+
+    public String getState() {
+        return _state;
+    }
+
+    public String getCountry() {
+        return _country;
     }
 }
