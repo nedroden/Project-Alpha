@@ -8,7 +8,7 @@
  * @license     MIT
  *
  * Class information:
- * @package     Login
+ * @package     User
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */
@@ -108,7 +108,7 @@ public class Login extends GUI {
         try {
             statement = Database.connection.createStatement();
             ResultSet result = statement.executeQuery(query);
-            while (result.next() && found == false) {
+            while (result.next() && !found) {
                 if (result.getString("username").equals(username) && result.getString("password").equals(Tool.hash(password))) {
                     super.showMainWindow();
                     ProjectAlpha.setUser(new User(

@@ -8,7 +8,7 @@
  * @license     MIT
  *
  * Class information:
- * @package     Front Office
+ * @package     Reservations
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */

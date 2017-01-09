@@ -20,8 +20,9 @@ public class ProjectAlpha {
 
     public static User user;
 
+    private Database _db;
     private static String _version = "1.0 Alpha 1";
-    private static String _copyright = "Project Alpha development team, 2016";
+    private static String _copyright = "Project Alpha development team, 2016-2017";
 
     public ProjectAlpha() {
 
@@ -30,8 +31,13 @@ public class ProjectAlpha {
     public void init() {
         Configuration config = new Configuration();
         config.load();
-        Database db = new Database();
-        db.connect();
+        _db = new Database();
+        _db.connect();
+    }
+
+    public void shutdown() {
+        _db.disconnect();
+        System.exit(1);
     }
 
     public static void setUser(User user) {

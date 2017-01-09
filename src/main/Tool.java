@@ -8,7 +8,7 @@
  * @license     MIT
  *
  * Class information:
- * @package     Login
+ * @package     Main
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */

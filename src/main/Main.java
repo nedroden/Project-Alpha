@@ -19,8 +19,9 @@ import static javafx.application.Application.launch;
 public class Main {
 
     public static void main(String[] args) {
-        ProjectAlpha main = new ProjectAlpha();
-        main.init();
+        ProjectAlpha paMain = new ProjectAlpha();
+        paMain.init();
         launch(GUI.class, args);
+        paMain.shutdown();
     }
 }
