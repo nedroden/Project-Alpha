@@ -67,9 +67,7 @@ public class GUI extends Application {
         mainLayout.setTop(_menuBar);
         mainLayout.setLeft(_sidebarBox);
 
-        WelcomePage welcome = new WelcomePage();
-        BorderPane welcomePage = welcome.getContent();
-        mainLayout.setCenter(welcomePage);
+        setCenter("WelcomePage", WelcomePage.getContent());
 
         mainScene = new Scene(mainLayout, 400, 250);
 

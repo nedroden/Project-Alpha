@@ -32,12 +32,14 @@ public class NavBar {
 		// [FILE]
 		Menu file = new Menu("_File");
 
+		MenuItem file_home = new MenuItem("Home");
 		MenuItem file_preferences = new MenuItem("Preferences...");
 		MenuItem file_exit = new MenuItem("Exit");
 
+		file_home.setOnAction(e -> gui.setCenter("WelcomePage", WelcomePage.getContent()));
 		file_exit.setOnAction(e -> System.exit(1));
 
-		file.getItems().addAll(file_preferences, file_exit);
+		file.getItems().addAll(file_home, file_preferences, file_exit);
 
 		// [FRONT OFFICE]
 		Menu frontoffice = new Menu("Front _office");
