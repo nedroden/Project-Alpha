@@ -35,11 +35,6 @@ public class ProjectAlpha {
         _db.connect();
     }
 
-    public void shutdown() {
-        _db.disconnect();
-        System.exit(1);
-    }
-
     public static void setUser(User user) {
         ProjectAlpha.user = user;
     }

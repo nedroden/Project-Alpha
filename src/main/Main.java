@@ -22,6 +22,5 @@ public class Main {
         ProjectAlpha paMain = new ProjectAlpha();
         paMain.init();
         launch(GUI.class, args);
-        paMain.shutdown();
     }
 }
