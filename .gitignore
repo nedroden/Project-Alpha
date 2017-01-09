@@ -12,5 +12,6 @@ hs_err_pid*
 
 config.properties
 
+# Intellij files
 out
 .idea
