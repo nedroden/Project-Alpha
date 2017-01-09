@@ -27,3 +27,21 @@ CREATE TABLE `pa_clients` (
   `state` text NOT NULL,
   `country` text NOT NULL
 );
+
+CREATE TABLE `pa_reservations` (
+`ID` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`client` int NOT NULL,
+`date_in` date NOT NULL,
+`date_out` date NOT NULL,
+`room` int,
+`room_type_id` int,
+`comments` text,
+`status` int NOT NULL
+);
+
+CREATE TABLE `pa_rooms` (
+`ID` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`number` int NOT NULL,
+`room_type_id` int NOT NULL,
+`status` int NOT NULL
+);
