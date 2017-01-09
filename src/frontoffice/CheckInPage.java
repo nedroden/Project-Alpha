@@ -15,6 +15,7 @@
 package frontoffice;
 
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import reservations.ReservationHandler;
 
@@ -28,6 +29,9 @@ public class CheckInPage {
         VBox pane = new VBox();
 
         ReservationHandler handler = new ReservationHandler();
+        Text text = new Text("This is where you'll be able to handle remaining check-ins.");
+
+        pane.getChildren().addAll(text);
 
         return pane;
     }

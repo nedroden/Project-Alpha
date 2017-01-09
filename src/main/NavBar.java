@@ -29,7 +29,6 @@ public class NavBar {
 	}
 
 	public MenuBar getMenu() {
-
 		// [FILE]
 		Menu file = new Menu("_File");
 
