@@ -14,6 +14,7 @@
  */
 package reservations;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 public class ReservationHandler {
@@ -24,7 +25,9 @@ public class ReservationHandler {
 
     }
 
-    public void getReservations(String dateIn, String dateOut) {
+    public Reservation getReservations(String dateIn, String dateOut) {
         // Execute query here
+
+        return null;
     }
 }
