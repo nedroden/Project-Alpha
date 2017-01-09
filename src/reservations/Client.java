@@ -14,14 +14,14 @@
  */
 package reservations;
 
-public class Reservation {
+public class Client {
 
     private int _ID;
-    private Client _client;
-    private String _dateIn;
-    private String _dateOut;
+    private String _firstName;
+    private String _lastName;
+    private String _email;
 
-    public Reservation() {
+    public Client() {
 
     }
 
@@ -29,11 +29,15 @@ public class Reservation {
         return _ID;
     }
 
-    public String getDateIn() {
-        return _dateIn;
+    public String getFirstName() {
+        return _firstName;
     }
 
-    public String getDateOut() {
-        return _dateOut;
+    public String getLastName() {
+        return _lastName;
+    }
+
+    public String getEmail() {
+        return _email;
     }
 }
