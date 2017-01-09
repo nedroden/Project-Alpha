@@ -26,6 +26,7 @@ public class Client {
 
     private String _address;
     private String _ZIP;
+    private String _city;
     private String _state;
     private String _country;
 
@@ -63,6 +64,10 @@ public class Client {
 
     public String getZIP() {
         return _ZIP;
+    }
+
+    public String getCity() {
+        return _city;
     }
 
     public String getState() {
