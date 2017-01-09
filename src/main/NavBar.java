@@ -42,8 +42,8 @@ public class NavBar {
 		// [FRONT OFFICE]
 		Menu frontoffice = new Menu("Front _office");
 
-		MenuItem frontoffice_checkin = new MenuItem("Checkin");
-		MenuItem frontoffice_checkout = new MenuItem("Checkout");
+		MenuItem frontoffice_checkin = new MenuItem("Check-in");
+		MenuItem frontoffice_checkout = new MenuItem("Check-out");
 		MenuItem frontoffice_occupied_rooms = new MenuItem("Occupied rooms");
 		MenuItem frontoffice_view_room = new MenuItem("View room...");
 
