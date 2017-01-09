@@ -14,8 +14,9 @@
  */
 package frontoffice;
 
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 import reservations.ReservationHandler;
 
@@ -28,10 +29,17 @@ public class CheckInPage {
     public static VBox getContent() {
         VBox pane = new VBox();
 
+        TableView table = new TableView();
         ReservationHandler handler = new ReservationHandler();
-        Text text = new Text("This is where you'll be able to handle remaining check-ins.");
 
-        pane.getChildren().addAll(text);
+        TableColumn column_id = new TableColumn("ID");
+        TableColumn column_fname = new TableColumn("First name");
+        TableColumn column_lname = new TableColumn("Last name");
+        TableColumn column_in = new TableColumn("Date in");
+
+        table.getColumns().addAll(column_id, column_fname, column_lname, column_in);
+
+        pane.getChildren().addAll(table);
 
         return pane;
     }
