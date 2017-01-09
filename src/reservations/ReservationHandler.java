@@ -14,9 +14,17 @@
  */
 package reservations;
 
+import java.util.ArrayList;
+
 public class ReservationHandler {
 
+    private ArrayList<Reservation> _reservations;
+
     public ReservationHandler() {
+
+    }
+
+    public void getReservations(String dateIn, String dateOut) {
 
     }
 }

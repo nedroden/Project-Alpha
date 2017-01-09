@@ -16,6 +16,8 @@ package frontoffice;
 
 import javafx.scene.layout.VBox;
 
+import reservations.ReservationHandler;
+
 public class CheckInPage {
 
     public CheckInPage() {
@@ -24,6 +26,8 @@ public class CheckInPage {
 
     public static VBox getContent() {
         VBox pane = new VBox();
+
+        ReservationHandler handler = new ReservationHandler();
 
         return pane;
     }
