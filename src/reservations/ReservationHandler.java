@@ -49,6 +49,6 @@ public class ReservationHandler {
             statement.close();
         }
 
-        return null;
+        return _reservations;
     }
 }

@@ -24,10 +24,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
-import reservations.Client;
 import reservations.Reservation;
 import reservations.ReservationHandler;
 
@@ -62,10 +62,16 @@ public class CheckInPage {
         TableColumn column_babies = new TableColumn("Babies");
         TableColumn column_comments = new TableColumn("Observations");
 
+        column_id.setCellValueFactory(new PropertyValueFactory<Reservation, String>("ID"));
+        column_in.setCellValueFactory(new PropertyValueFactory<Reservation, String>("dateIn"));
+        column_out.setCellValueFactory(new PropertyValueFactory<Reservation, String>("dateOut"));
+
+        column_comments.setMinWidth(400);
+
         DateFormat format = new SimpleDateFormat("dd-MM-yy");
         Date date = new Date();
         try {
-            handler.getReservations(format.format(date));
+            reservations = handler.getReservations(format.format(date));
         }
         catch (SQLException e) {
             System.out.print("Could not load reservations.");
@@ -76,9 +82,10 @@ public class CheckInPage {
         ObservableList<Reservation> checkIns = FXCollections.observableArrayList();
 
         for (Reservation reservation : reservations) {
-            System.out.println("Result found.");
+            checkIns.addAll(reservation);
         }
 
+        table.setItems(checkIns);
         table.setPlaceholder(new Text("No pending check-ins."));
         table.getColumns().addAll(column_id, column_fname, column_lname, column_in, column_out, column_adults, column_children, column_babies, column_comments);
 
