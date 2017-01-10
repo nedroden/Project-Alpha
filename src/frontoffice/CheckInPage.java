@@ -45,14 +45,6 @@ public class CheckInPage {
         ReservationHandler handler = new ReservationHandler();
         ArrayList<Reservation> reservations = new ArrayList<>();
 
-        try {
-            handler.getReservations("January 10, 2017");
-        }
-        catch (SQLException e) {
-            System.out.println("Reservations could not be loaded from the database.");
-            System.exit(0);
-        }
-
         TableColumn column_id = new TableColumn("ID");
         TableColumn column_fname = new TableColumn("First name");
         TableColumn column_lname = new TableColumn("Last name");
