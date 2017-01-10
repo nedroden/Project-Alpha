@@ -21,6 +21,12 @@ public class Reservation {
     private String _dateIn;
     private String _dateOut;
 
+    private int _adults;
+    private int _children;
+    private int _babies;
+
+    private String _comments;
+
     public Reservation(int ID, Client client, String dateIn, String dateOut) {
         _ID = ID;
         _client = client;
@@ -42,5 +48,37 @@ public class Reservation {
 
     public String getDateOut() {
         return _dateOut;
+    }
+
+    public int getAdults() {
+        return _adults;
+    }
+
+    public int getChildren() {
+        return _children;
+    }
+
+    public int getBabies() {
+        return _babies;
+    }
+
+    public String getComments() {
+        return _comments;
+    }
+
+    public void setAdults(int adults) {
+        _adults = adults;
+    }
+
+    public void setChildren(int children) {
+        _children = children;
+    }
+
+    public void setBabies(int babies) {
+        _babies = babies;
+    }
+
+    public void setComments(String comments) {
+        _comments = comments;
     }
 }

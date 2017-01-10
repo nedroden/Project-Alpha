@@ -28,6 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
+import reservations.Client;
 import reservations.Reservation;
 import reservations.ReservationHandler;
 
@@ -63,10 +64,18 @@ public class CheckInPage {
         TableColumn column_comments = new TableColumn("Observations");
 
         column_id.setCellValueFactory(new PropertyValueFactory<Reservation, String>("ID"));
+        column_adults.setCellValueFactory(new PropertyValueFactory<Reservation, Integer>("adults"));
+        column_children.setCellValueFactory(new PropertyValueFactory<Reservation, Integer>("children"));
+        column_babies.setCellValueFactory(new PropertyValueFactory<Reservation, Integer>("babies"));
         column_in.setCellValueFactory(new PropertyValueFactory<Reservation, String>("dateIn"));
         column_out.setCellValueFactory(new PropertyValueFactory<Reservation, String>("dateOut"));
+        column_comments.setCellValueFactory(new PropertyValueFactory<Reservation, String>("comments"));
 
-        column_comments.setMinWidth(400);
+        column_fname.setMinWidth(200);
+        column_lname.setMinWidth(200);
+        column_in.setMinWidth(200);
+        column_in.setMinWidth(200);
+        column_comments.setMinWidth(500);
 
         DateFormat format = new SimpleDateFormat("dd-MM-yy");
         Date date = new Date();

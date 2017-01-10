@@ -28,20 +28,24 @@ CREATE TABLE `pa_clients` (
   `country` text NOT NULL
 );
 
-CREATE TABLE `pa_reservations` (
-`ID` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-`client` int NOT NULL,
-`date_in` date NOT NULL,
-`date_out` date NOT NULL,
-`room` int,
-`room_type_id` int,
-`comments` text,
-`status` int NOT NULL
-);
-
 CREATE TABLE `pa_rooms` (
 `ID` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 `number` int NOT NULL,
 `room_type_id` int NOT NULL,
 `status` int NOT NULL
 );
+
+CREATE TABLE `pa_reservations` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `client` int(11) NOT NULL,
+  `date_in` date NOT NULL,
+  `date_out` date NOT NULL,
+  `room` int(11) NOT NULL,
+  `room_type_id` int(11) NOT NULL,
+  `adults` int(11) NOT NULL,
+  `children` int(11) NOT NULL,
+  `babies` int(11) NOT NULL,
+  `comments` text NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
