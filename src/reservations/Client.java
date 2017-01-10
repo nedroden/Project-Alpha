@@ -30,8 +30,10 @@ public class Client {
     private String _state;
     private String _country;
 
-    public Client() {
-
+    public Client(int ID, String firstName, String lastName) {
+        _ID = ID;
+        _firstName = firstName;
+        _lastName = lastName;
     }
 
     public int getID() {

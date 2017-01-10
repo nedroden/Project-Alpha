@@ -17,13 +17,14 @@ package frontoffice;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 import reservations.Client;
@@ -36,11 +37,20 @@ public class CheckInPage {
 
     }
 
-    public static VBox getContent() {
-        VBox pane = new VBox();
-
+    public static BorderPane getContent() {
+        BorderPane pane = new BorderPane();
         TableView table = new TableView();
+
         ReservationHandler handler = new ReservationHandler();
+        ArrayList<Reservation> reservations = new ArrayList<>();
+
+        try {
+            handler.getReservations("January 10, 2017");
+        }
+        catch (SQLException e) {
+            System.out.println("Reservations could not be loaded from the database.");
+            System.exit(0);
+        }
 
         TableColumn column_id = new TableColumn("ID");
         TableColumn column_fname = new TableColumn("First name");
@@ -63,12 +73,16 @@ public class CheckInPage {
             System.exit(1);
         }
 
-        ObservableList<Reservation> reservations = FXCollections.observableArrayList();
+        ObservableList<Reservation> checkIns = FXCollections.observableArrayList();
+
+        for (Reservation reservation : reservations) {
+            System.out.println("Result found.");
+        }
 
         table.setPlaceholder(new Text("No pending check-ins."));
         table.getColumns().addAll(column_id, column_fname, column_lname, column_in, column_out, column_adults, column_children, column_babies, column_comments);
 
-        pane.getChildren().addAll(table);
+        pane.setCenter(table);
 
         return pane;
     }

@@ -21,29 +21,34 @@ import main.Database;
 
 public class ReservationHandler {
 
-    private ArrayList<Reservation> _reservations;
-
     public ReservationHandler() {
 
     }
 
     public ArrayList getReservations(String dateIn) throws SQLException {
+        ArrayList<Reservation> _reservations = new ArrayList();
         // !!! NOTE: DATES SHOULD BE CONVERTED TO SQL FORMAT
-        String query = "SELECT ID, client, date_in, date_out, room, comments, status FROM pa_reservations WHERE date_in = '" + dateIn + "'";
+        String query = "SELECT ID, client, date_in, date_out, room, comments, status FROM pa_reservations";
         Statement statement = null;
 
         try {
             statement = Database.connection.createStatement();
             ResultSet result = statement.executeQuery(query);
+
             while (result.next()) {
+                Client client = new Client(1, "John", "Doe");
+                Reservation reservation = new Reservation(result.getInt("ID"), client, "Jan 10, 2017", "Jan 11, 2017");
+                _reservations.add(reservation);
             }
         }
         catch (SQLException e) {
             e.printStackTrace();
+            System.exit(0);
         }
         finally {
-            if (statement != null) statement.close();
+            statement.close();
         }
+
         return null;
     }
 }
