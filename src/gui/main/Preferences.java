@@ -47,7 +47,7 @@ public class Preferences {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setResizable(false);
         window.setScene(scene);
-        window.setTitle("PreferencesHandler");
+        window.setTitle("Preferences");
         window.showAndWait();
     }
 }

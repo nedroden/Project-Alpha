@@ -5,3 +5,4 @@ db_password =
 db_name = project_alpha
 
 window_title = Project Alpha | Hotel management software
+locale = en_US
