@@ -16,6 +16,7 @@ package main;
 
 import frontoffice.CheckInPage;
 
+import gui.main.Preferences;
 import help.About;
 
 import javafx.scene.control.Menu;
@@ -35,11 +36,11 @@ public class NavBar {
 		Menu file = new Menu("_File");
 
 		MenuItem file_home = new MenuItem("Home");
-		MenuItem file_preferences = new MenuItem("Preferences...");
+		MenuItem file_preferences = new MenuItem("PreferencesHandler...");
 		MenuItem file_exit = new MenuItem("Exit");
 
 		file_home.setOnAction(e -> gui.setCenter("WelcomePage", WelcomePage.getContent()));
-		file_preferences.setOnAction(e -> Preferences.displayScreen());
+		file_preferences.setOnAction(e -> PreferencesHandler.execute());
 		file_exit.setOnAction(e -> System.exit(1));
 
 		file.getItems().addAll(file_home, file_preferences, file_exit);

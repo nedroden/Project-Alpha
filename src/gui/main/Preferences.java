@@ -8,11 +8,11 @@
  * @license     MIT
  *
  * Class information:
- * @package     Main
+ * @package     Gui.Main
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */
-package main;
+package gui.main;
 
 import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
@@ -28,7 +28,7 @@ public class Preferences {
 
     }
 
-    public static void displayScreen() {
+    public void displayScreen() {
         Stage window = new Stage();
         BorderPane layout = new BorderPane();
 
@@ -47,7 +47,7 @@ public class Preferences {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setResizable(false);
         window.setScene(scene);
-        window.setTitle("Preferences");
+        window.setTitle("PreferencesHandler");
         window.showAndWait();
     }
 }
