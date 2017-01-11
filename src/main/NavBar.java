@@ -16,7 +16,7 @@ package main;
 
 import frontoffice.CheckInPage;
 
-import gui.main.Preferences;
+import gui.GUI;
 import help.About;
 
 import javafx.scene.control.Menu;

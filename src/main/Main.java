@@ -14,6 +14,8 @@
  */
 package main;
 
+import gui.GUI;
+
 import static javafx.application.Application.launch;
 
 public class Main {

@@ -28,7 +28,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import main.Database;
-import main.GUI;
+import gui.GUI;
 import main.ProjectAlpha;
 import main.Tool;
 

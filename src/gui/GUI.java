@@ -12,7 +12,7 @@
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */
-package main;
+package gui;
 
 import javafx.application.Application;
 import javafx.scene.control.MenuBar;
@@ -22,6 +22,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.util.HashMap;
 
+import main.Configuration;
+import main.NavBar;
+import main.Sidebar;
+import main.WelcomePage;
 import user.Login;
 
 public class GUI extends Application {

@@ -14,7 +14,7 @@
  */
 package main;
 
-import gui.main.Preferences;
+import gui.GUI;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
