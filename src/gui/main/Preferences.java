@@ -14,12 +14,12 @@
  */
 package gui.main;
 
-import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Preferences {
