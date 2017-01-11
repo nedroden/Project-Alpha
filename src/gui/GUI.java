@@ -14,18 +14,20 @@
  */
 package gui;
 
+import java.util.HashMap;
+
 import javafx.application.Application;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.util.HashMap;
 
 import main.Configuration;
-import main.NavBar;
-import main.Sidebar;
+import gui.main.NavBar;
+import gui.main.Sidebar;
 import main.WelcomePage;
+
 import user.Login;
 
 public class GUI extends Application {

@@ -12,14 +12,18 @@
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */
-package main;
+package gui.main;
+
+import frontoffice.CheckInPage;
 
 import gui.GUI;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-import frontoffice.CheckInPage;
+import main.PreferencesHandler;
+import main.WelcomePage;
 
 public class Sidebar {
 

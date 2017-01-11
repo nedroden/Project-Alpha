@@ -12,16 +12,20 @@
  * @since       1.0 Alpha 1
  * @author      Project Alpha development team
  */
-package main;
+package gui.main;
 
 import frontoffice.CheckInPage;
 
 import gui.GUI;
+
 import help.About;
 
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+
+import main.PreferencesHandler;
+import main.WelcomePage;
 
 public class NavBar {
 
