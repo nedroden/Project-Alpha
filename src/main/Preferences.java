@@ -16,6 +16,7 @@ package main;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -30,8 +31,8 @@ public class Preferences {
         Stage window = new Stage();
         BorderPane layout = new BorderPane();
 
-        Text text = new Text("Test");
-        layout.setCenter(text);
+        // add sidebar here
+        // add settings here
 
         Scene scene = new Scene(layout, 500, 550);
 

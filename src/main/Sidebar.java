@@ -29,7 +29,6 @@ public class Sidebar {
     }
 
     public VBox getSidebar() {
-
         VBox sidebar = new VBox(10);
 
         Button button_home = new Button();
