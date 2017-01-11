@@ -15,9 +15,10 @@
 package main;
 
 import javafx.scene.Scene;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -31,10 +32,17 @@ public class Preferences {
         Stage window = new Stage();
         BorderPane layout = new BorderPane();
 
-        // add sidebar here
-        // add settings here
+        TreeItem<String> pref_general = new TreeItem<>("Settings");
+        TreeItem<String> pref_general_software = new TreeItem<>("Software settings");
+        TreeItem<String> pref_general_hotel = new TreeItem<>("Hotel settings");
 
-        Scene scene = new Scene(layout, 500, 550);
+        pref_general.getChildren().addAll(pref_general_software, pref_general_hotel);
+        pref_general.setExpanded(true);
+        TreeView<String> categories = new TreeView(pref_general);
+
+        layout.setLeft(categories);
+
+        Scene scene = new Scene(layout, 700, 750);
 
         window.initModality(Modality.APPLICATION_MODAL);
         window.setResizable(false);
