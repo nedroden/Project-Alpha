@@ -39,6 +39,7 @@ public class NavBar {
 		MenuItem file_exit = new MenuItem("Exit");
 
 		file_home.setOnAction(e -> gui.setCenter("WelcomePage", WelcomePage.getContent()));
+		file_preferences.setOnAction(e -> Preferences.displayScreen());
 		file_exit.setOnAction(e -> System.exit(1));
 
 		file.getItems().addAll(file_home, file_preferences, file_exit);

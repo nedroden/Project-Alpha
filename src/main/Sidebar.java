@@ -51,6 +51,7 @@ public class Sidebar {
 
         Button button_preferences = new Button();
         button_preferences.setId("button_preferences");
+        button_preferences.setOnAction(e -> Preferences.displayScreen());
 
         Button button_quit = new Button();
         button_quit.setId("button_quit");

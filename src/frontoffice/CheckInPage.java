@@ -65,9 +65,9 @@ public class CheckInPage {
 
         column_fname.setMinWidth(200);
         column_lname.setMinWidth(200);
-        column_in.setMinWidth(200);
-        column_out.setMinWidth(200);
-        column_comments.setMinWidth(500);
+        column_in.setMinWidth(150);
+        column_out.setMinWidth(150);
+        column_comments.setMinWidth(400);
 
         DateFormat format = new SimpleDateFormat("dd-MM-yy");
         Date date = new Date();
